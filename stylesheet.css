@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Monsterrat", sans-serif;
+    color: #ffffff;
+}
+
+body {
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    box-sizing: border-box;
+    min-height: 100vh;
+
+}
+
+.header {
+    display: flex;
+    margin: 100px;
+
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    height: 100%;
+    width: 80%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.darken {
+    opacity: 0.5;
+}
+
+.card {
+    background: rgb(34, 34, 34);
+    border: solid 1px rgb(152, 255, 255);;
+    min-height: 200px;
+    border-radius: 0.5rem;
+    padding: 20px;
+}
+
+#createform {
+    border: solid 1px rgb(152, 255, 255);
+    background-color: rgb(29, 29, 29);
+    border-radius: 0.5rem;
+    min-height: 70px;
+    min-width: 200px;
+
+    font-size: 1.5rem;
+}
+
+#createform:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+p {
+    font-size: 2rem;
+    border-bottom: solid 1px rgb(152, 255, 255);
+    padding: 10px 0;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 3px 3px 3px #181818;
+    border-radius: 0.5rem;
+    padding: 20px;
+    align-items: flex-start;
+    position: absolute;
+    top: 30%;
+
+}
+
+.formentry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    gap: 2px;
+}
+
+.formentryinline {
+    display: flex;
+    gap: 2px;
+    /* padding-bottom: 20px; */
+    justify-content: space-between;
+    width: 350px;
+    padding-bottom: 10px;
+}
+
+label {
+    font-size: 0.8rem;
+    color: rgb(152, 255, 255);
+
+}
+
+input {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+
+    padding-left: 8px;
+    padding-top: 1px;
+    color: #1b1b1b;
+    
+}
+
+[type="text"], [type="number"] {
+    box-shadow: 3px 3px 3px #181818;
+    width: 350px;
+    height: 40px;
+}
+
+.formbutton > button {
+    border-radius: 0.5rem;
+    border: solid 1px ;
+    background-color: #292929;
+    color: rgb(152, 255, 255);
+    box-shadow: 3px 3px 3px #222222;
+    padding: 15px 25px;
+}
+
+.formbutton {
+    align-self: center;
+}
+
+.removebutton {
+    border-radius: 0.7rem;
+    color: red;
+    border: solid 1px red;
+    background-color: rgb(32, 32, 32);
+    width: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.buttons {
+display: flex;
+justify-content: space-between;
+}
+
+.Read, .Unread {
+    border-radius: 0.7rem;
+    background-color: rgb(32, 32, 32);
+    width: 200px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.Read {
+    border: solid 1px lime;
+    color: lime;
+}
+
+.Unread {
+    border: solid 1px orange;
+    color: orange;
+}
+
+

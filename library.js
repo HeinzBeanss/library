@@ -24,7 +24,7 @@ function createForm() {
     form.appendChild(divname);
     const labelname = document.createElement("label");
     labelname.setAttribute("for", "bookname");
-    labelname.textContent = "BOOK NAME:";
+    labelname.textContent = "BOOK TITLE:";
     divname.appendChild(labelname);
     const inputname = document.createElement("input");
     inputname.setAttribute("type", "text");
@@ -75,18 +75,21 @@ function createForm() {
     inputread.setAttribute("type", "checkbox");
     inputread.setAttribute("name", "readstatus");
     inputread.setAttribute("id", "readstats");
-    inputread.setAttribute("required", ""); 
+    // inputread.setAttribute("required", ""); 
     divread.appendChild(inputread);
 
-    const divbutton = document.createElement("div");
-    divbutton.classList.add("formbutton");
-    form.appendChild(divbutton);
+    const formbuttonarea = document.createElement("div");
+    formbuttonarea.classList.add("formbuttonarea");
+    form.appendChild(formbuttonarea);
+
+
     const buttonbutton = document.createElement("button");
-    buttonbutton.setAttribute("type", "button");
+    // buttonbutton.setAttribute("type", "button");
     buttonbutton.textContent = "ADD BOOK TO LIBRARY";
     buttonbutton.classList.add("confirmbook");
-    divbutton.appendChild(buttonbutton);
-    buttonbutton.addEventListener("click", addBook);
+    formbuttonarea.appendChild(buttonbutton);
+    // buttonbutton.addEventListener("click", addBook);
+    form.addEventListener("submit", addBook);
 
     function addBook() {
 
@@ -102,6 +105,9 @@ function createForm() {
         myLibrary.push(book);
     
         clearCards();
+        printCards();
+
+        function printCards() {
     
         for (const item in myLibrary) {
     
@@ -173,14 +179,29 @@ function createForm() {
                         // i--;
                     }
                 }
+                clearCards();
+                printCards();
             }
 
+        }
 
-    
             form.remove();
             main.classList.remove("darken");
             header.classList.remove("darken");
+        }
     }
+
+    const formclosebutton = document.createElement("button");
+    formclosebutton.classList.add("formclosebutton");
+    formclosebutton.textContent = "X";
+    formbuttonarea.appendChild(formclosebutton);
+    formclosebutton.addEventListener("click", closeForm);
+
+    function closeForm() {
+        form.remove();
+        main.classList.remove("darken");
+        header.classList.remove("darken");
+        add.disabled = false;
     }
 }
 
@@ -193,9 +214,6 @@ const main = document.querySelector(".main");
 const add = document.querySelector("#createform");
 add.addEventListener("click", createForm);
 
-
-
-
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -204,6 +222,12 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
+
+// const book1 = Book("Dune", "Frank Herbert", 871, "Unread");
+// const book2 = Book("Harry Potter", "J.K Rowling", 657, "Read");
+// myLibrary.push(book1);
+// myLibrary.push(book2);
+// printCards();
 
 // console.log(Book.prototype);
 // Book.prototype = Object.create(createForm.prototype);

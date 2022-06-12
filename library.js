@@ -110,6 +110,10 @@ function createForm() {
         function printCards() {
     
         for (const item in myLibrary) {
+
+            console.log(Book.prototype);
+            console.log(printCards.prototype);
+            console.log(createForm.prototype);
     
             const card = document.createElement("div");
             card.classList.add("card");
@@ -216,11 +220,14 @@ add.addEventListener("click", createForm);
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+
 }
 
 // const book1 = Book("Dune", "Frank Herbert", 871, "Unread");
@@ -229,7 +236,7 @@ function Book(title, author, pages, read) {
 // myLibrary.push(book2);
 // printCards();
 
-// console.log(Book.prototype);
+
 // Book.prototype = Object.create(createForm.prototype);
 // console.log(Book.prototype);
 
